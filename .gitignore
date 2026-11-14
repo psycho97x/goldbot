@@ -1,0 +1,10 @@
+# Local secrets — never commit
+.env
+
+# Python / runtime noise
+__pycache__/
+*.pyc
+goldbot.log
+
+# Note: goldbot_state.json is intentionally tracked so CI can keep its
+# dedupe state across runs. It contains no secrets.
