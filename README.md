@@ -162,17 +162,16 @@ duplicate alerts between runs. It holds no secrets.
 
 ### GitHub caveats
 
-- The default schedule is hourly at `:05` UTC. Switch to `*/15 * * * *` in the
-  workflow for 15-minute checks (recommended for a **public** repo).
+- The schedule is every 15 minutes (`*/15 * * * *`).
 - GitHub cron is best-effort: runs can start a few minutes late, and occasionally
   later under load. The game rate is daily, so this is fine for alerts.
-- Telegram **commands are answered only during a scheduled run** (up to an hour
-  late). If you want instant `/price` replies, keep the local server running or
-  use an always-on host.
-- **Public repo** = free unlimited Actions, but GitHub disables scheduled
-  workflows after 60 days with no repository activity. **Private repo** = uses
-  your free 2,000 minutes/month; hourly runs cost roughly 720 minutes/month, while
-  15-minute runs would exceed the free allowance.
+- Telegram **commands are answered only during a scheduled run** (usually within
+  15 minutes, longer if GitHub delays the run). If you want instant `/price`
+  replies, keep the local server running or use an always-on host.
+- **Public repo** = free unlimited Actions (recommended for 15-minute runs), but
+  GitHub disables scheduled workflows after 60 days with no repository activity.
+  **Private repo** = 15-minute runs cost roughly 2,880 minutes/month, which
+  exceeds the free 2,000; switch to hourly (`5 * * * *`) there.
 - Never commit `.env` — it is already in `.gitignore`. Secrets belong in
   GitHub Secrets.
 

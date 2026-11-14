@@ -2,9 +2,9 @@ name: GoldBot
 
 on:
   schedule:
-    # Hourly at :05 UTC. The rate changes at 00:00 UTC, so :05 catches the new day.
-    # Public repo? Use "*/15 * * * *" for 15-minute checks and faster command replies.
-    - cron: "5 * * * *"
+    # Every 15 minutes. The rate changes at 00:00 UTC; frequent runs also make
+    # Telegram commands answer faster.
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
