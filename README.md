@@ -133,6 +133,11 @@ Or simply leave `python goldbot.py` running in a terminal. On Linux/macOS use cr
 The workflow at `.github/workflows/goldbot.yml` runs `goldbot.py --once --state-minimal`
 on a schedule, so your computer does not have to stay on.
 
+This copy is live at **https://github.com/psycho97x/goldbot** (public), with the
+`TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` secrets already configured.
+
+To deploy your own copy:
+
 1. Create a GitHub repository and push this folder:
 
 ```powershell
